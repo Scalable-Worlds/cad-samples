@@ -20,6 +20,15 @@ Measured results for three models are in each task's `task.toml`.
 
 ## Run
 
+Each task pins a prebuilt image in a private Docker Hub repository. Log in once with
+the access key we sent you:
+
+```sh
+docker login -u scalableworlds    # paste the access key as the password
+```
+
+Then run the tasks:
+
 ```sh
 harbor run --repo Scalable-Worlds/cad-samples -d cad-samples -a <agent> -m <model>
 ```
@@ -30,7 +39,6 @@ From a clone, one task at a time:
 harbor run -p tasks/<task> -a oracle    # the reference solution scores 1
 ```
 
-Each task pins a prebuilt image in a private registry. For pull access or any
-question, write to contact@scalableworlds.ai.
+For an access key or any question, write to contact@scalableworlds.ai.
 
 Shared privately. Please do not redistribute.
