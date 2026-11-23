@@ -1,0 +1,77 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Implement STL Bore Access Survey Tool"
+language = "python"
+difficulty = "medium"
+category = "cad"
+subcategory = "stl-mesh-geometry-analysis"
+tags = [
+    "python",
+    "stl",
+    "bore-access",
+    "computational-geometry",
+    "probe-clearance",
+]
+
+[metadata.source]
+publisher = "Pachter Lab"
+repo = "https://github.com/pachterlab/poseidon"
+pinned_ref = "5a139fed350bbf5d775ffa9650f465e557b6ccb0"
+license = "BSD-2-Clause"
+title = "Poseidon complete syringe-pump design and carriage"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 31.0
+avg_agent_sec = 1235
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 43.0
+avg_agent_sec = 1412
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 121.5
+avg_agent_sec = 5432
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 10000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:69c5feb013933b009d3e183e4802b8a56c945a89be9965f2ecf20caf3dd8f274"
+cpus = 2
+memory_mb = 3072
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/pachterlab-poseidon-pump-carriage-v2-8aa8f3a5"
+description = "Prepare a mechanical access survey for a side-looking inspection probe on the Poseidon microscope station. The fixture designer has the STL print releases and needs to know which portions of the..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

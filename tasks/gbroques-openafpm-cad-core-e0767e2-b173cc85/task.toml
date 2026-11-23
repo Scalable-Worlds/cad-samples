@@ -1,0 +1,78 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Parametric OpenAFPM Furling Clearance and Stop Design"
+language = "python"
+difficulty = "medium"
+category = "cad"
+subcategory = "parametric-freecad-assembly"
+tags = [
+    "freecad",
+    "wind-turbine",
+    "parametric-design",
+    "furling-mechanism",
+    "python",
+    "fabrication-tables",
+]
+
+[metadata.source]
+publisher = "G. Roques / OpenAFPM"
+repo = "https://github.com/gbroques/openafpm-cad-core"
+pinned_ref = "e0767e21be1dab1e076a9d4e7148b393a14d80c3"
+license = "LGPL-2.1-only"
+title = "gbroques/openafpm-cad-core at e0767e2: whole repository"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 242.2
+avg_agent_sec = 6490
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 101.8
+avg_agent_sec = 2189
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 231.5
+avg_agent_sec = 8529
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 2000
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 15000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:2c8ad895115c25bdb0901b031769f4c5be7a6b6af3735fb9c9cca4aac1a8fda2"
+cpus = 2
+memory_mb = 3072
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/gbroques-openafpm-cad-core-e0767e2-b173cc85"
+description = "Revise the OpenAFPM wind turbine so a builder can specify the clearance between the tail vane and the blade sweep at full furl. The linked baseline at /app/inputs/openafpm_cad_core has its..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

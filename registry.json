@@ -1,0 +1,45 @@
+[
+  {
+    "name": "cad-samples",
+    "version": "1.0",
+    "description": "Nine CAD and engineering tasks for coding agents.",
+    "tasks": [
+      {
+        "name": "gbroques-openafpm-cad-core-e0767e2-b173cc85",
+        "path": "tasks/gbroques-openafpm-cad-core-e0767e2-b173cc85"
+      },
+      {
+        "name": "pachterlab-poseidon-pump-carriage-v2-7b8fb975",
+        "path": "tasks/pachterlab-poseidon-pump-carriage-v2-7b8fb975"
+      },
+      {
+        "name": "pachterlab-poseidon-pump-carriage-v2-8aa8f3a5",
+        "path": "tasks/pachterlab-poseidon-pump-carriage-v2-8aa8f3a5"
+      },
+      {
+        "name": "stuttgart-timber-beam-columns-f1589626",
+        "path": "tasks/stuttgart-timber-beam-columns-f1589626"
+      },
+      {
+        "name": "tum-gni-anonymized-course-build-d0a802ff-0585e632",
+        "path": "tasks/tum-gni-anonymized-course-build-d0a802ff-0585e632"
+      },
+      {
+        "name": "vendor-cad-assemblies-4ab00b55-d4fc6754",
+        "path": "tasks/vendor-cad-assemblies-4ab00b55-d4fc6754"
+      },
+      {
+        "name": "vendor-cad-assemblies-758f56a9-91411172",
+        "path": "tasks/vendor-cad-assemblies-758f56a9-91411172"
+      },
+      {
+        "name": "zenodo-krijnen-balcony-ifc-models-a8-51eb5f01",
+        "path": "tasks/zenodo-krijnen-balcony-ifc-models-a8-51eb5f01"
+      },
+      {
+        "name": "zipcpu-wbscope-85907874",
+        "path": "tasks/zipcpu-wbscope-85907874"
+      }
+    ]
+  }
+]

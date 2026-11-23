@@ -1,0 +1,77 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "IFC Truss Load-Rating and Operating Chart Generator"
+language = "python"
+difficulty = "medium"
+category = "scientific-computing"
+subcategory = "structural-analysis"
+tags = [
+    "ifc",
+    "finite-element-analysis",
+    "structural-engineering",
+    "load-rating",
+    "python",
+]
+
+[metadata.source]
+publisher = "Technical University of Munich, Georg Nemetschek Institute (GNI)"
+repo = "https://zenodo.org/records/19722012"
+pinned_ref = "19722012"
+license = "CC-BY-4.0"
+title = "GNI BIM Project team 7 building: paired architectural and structural IFC models"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 108.0
+avg_agent_sec = 3528
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 37.8
+avg_agent_sec = 1254
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 71.8
+avg_agent_sec = 4543
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 4000
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 12000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:4c72b6fc8c5b654bcb5fd3423422af610381e13c870c041876be8a028827accb"
+cpus = 2
+memory_mb = 5120
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/tum-gni-anonymized-course-build-d0a802ff-0585e632"
+description = "Produce an operating chart for a two-wheel maintenance carrier sharing the lower chord of each roof truss in /app/inputs/model_7_structure.ifc with a suspended service unit. The operator knows the..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

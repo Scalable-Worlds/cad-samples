@@ -1,0 +1,75 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Generate Mold-Pull Trapped-Steel Solids from STL Shells"
+languages = [
+    "python",
+]
+difficulty = "medium"
+category = "cad"
+subcategory = "mold-pull-analysis"
+tags = [
+    "stl-meshes",
+    "mold-design",
+    "computational-geometry",
+    "python",
+    "3d-printing",
+]
+
+[metadata.source]
+title = "Six-legged spherical robot with modular shell"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 77.8
+avg_agent_sec = 1854
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 1
+total = 4
+avg_steps = 36.5
+avg_agent_sec = 748
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 127.8
+avg_agent_sec = 6957
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 11000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:9ae04c907b2ba20f6c6727c243823d7371193bf5f6a8a097de152307d5dd688b"
+cpus = 2
+memory_mb = 16384
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/vendor-cad-assemblies-758f56a9-91411172"
+description = "We are reviewing the spherical robot's printed shells for production in a two-half mould. For each proposed pull direction, give the toolmaker a solid model of the steel that would be trapped..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

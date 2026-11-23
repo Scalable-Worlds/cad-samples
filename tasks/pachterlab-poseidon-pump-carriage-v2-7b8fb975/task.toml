@@ -1,0 +1,78 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Create Print-Fit Poseidon Hardware with 0.40 mm Bore Clearance"
+language = "python"
+difficulty = "medium"
+category = "cad"
+subcategory = "iges-solid-clearance-editing"
+tags = [
+    "iges",
+    "step",
+    "b-rep",
+    "cylindrical-clearance",
+    "solid-modeling",
+    "python",
+]
+
+[metadata.source]
+publisher = "Pachter Lab"
+repo = "https://github.com/pachterlab/poseidon"
+pinned_ref = "5a139fed350bbf5d775ffa9650f465e557b6ccb0"
+license = "BSD-2-Clause"
+title = "Poseidon complete syringe-pump design and carriage"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 123.0
+avg_agent_sec = 2466
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 58.2
+avg_agent_sec = 1560
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 245.0
+avg_agent_sec = 8894
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 12000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:f8f8e4af81e37329f502da366d0461d9dc6001ffd8e05f60922b923c00119a0a"
+cpus = 2
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/pachterlab-poseidon-pump-carriage-v2-7b8fb975"
+description = "Issue a print-fit variant of the Poseidon hardware. The print shop needs another 0.40 mm of diametral clearance on fastener bores and bearing seats. Keep the same axial engagement and preserve the..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

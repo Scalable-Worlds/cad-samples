@@ -1,0 +1,81 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Implement Windowed DDR Capture Reassignment in SystemVerilog"
+languages = [
+    "python",
+    "systemverilog",
+]
+difficulty = "medium"
+category = "software-engineering"
+subcategory = "systemverilog-rtl-design"
+tags = [
+    "systemverilog",
+    "axi-stream",
+    "axi4-lite",
+    "ddr-ring-buffer",
+    "rtl-verification",
+    "yosys",
+]
+
+[metadata.source]
+publisher = "Gisselquist Technology, LLC / ZipCPU"
+repo = "https://github.com/ZipCPU/wbscope"
+pinned_ref = "999f35f445817f69be3cd826cc66287f4cc760f7; wb2axip dependencies 8753983af9b1f5a69572dd973b57260f144d9d0d"
+license = "GPL-3.0-or-later AND Apache-2.0 AND LicenseRef-Public-Domain"
+title = "ZipCPU triggered and compressed FPGA logic analyzer"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 74.2
+avg_agent_sec = 2406
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 1
+total = 4
+avg_steps = 44.2
+avg_agent_sec = 1475
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 111.2
+avg_agent_sec = 6194
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 9000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:8a0f2941f18795f45694f6ed627ba653de3a5afffb9e2162765cffb257d95fad"
+cpus = 2
+memory_mb = 3072
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/zipcpu-wbscope-85907874"
+description = "Let firmware reassign a running raw capture to a new shared DDR allocation. Use /app/inputs/memscope.v, /app/inputs/memscopc.v, /app/inputs/axisrle.v, /app/inputs/skidbuffer.v and..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

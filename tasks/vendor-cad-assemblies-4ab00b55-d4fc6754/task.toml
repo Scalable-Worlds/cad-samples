@@ -1,0 +1,76 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Unfold Folded Sheet-Metal STLs into Laser Blanks with Brake Marks"
+languages = [
+    "python",
+]
+difficulty = "medium"
+category = "cad"
+subcategory = "sheet-metal-unfolding"
+tags = [
+    "sheet-metal",
+    "flat-pattern",
+    "stl-meshes",
+    "computational-geometry",
+    "python",
+]
+
+[metadata.source]
+title = "Frax3D v1.0 3D printer"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 73.5
+avg_agent_sec = 2407
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 55.2
+avg_agent_sec = 1871
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 2
+total = 3
+unmeasured = 1
+avg_steps = 114.7
+avg_agent_sec = 5511
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 9000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:86ff4aeac02036132f90af50d88b4f337fc464ac495cf6165c9a0f277dc396f0"
+cpus = 2
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/vendor-cad-assemblies-4ab00b55-d4fc6754"
+description = "Prepare replacement laser blanks for a printer frame. The repair shop receives folded sheet-metal parts as STLs and needs a reusable tool that releases the cut contour and signed brake marks together."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]

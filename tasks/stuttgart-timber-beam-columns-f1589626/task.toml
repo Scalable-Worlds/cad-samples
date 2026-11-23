@@ -1,0 +1,78 @@
+schema_version = "1.4"
+artifacts = [
+    "/app/out",
+]
+
+[metadata]
+display_title = "Generate and Rate a Glulam Beam-Column Layup Release"
+language = "python"
+difficulty = "medium"
+category = "scientific-computing"
+subcategory = "structural-analysis"
+tags = [
+    "glulam",
+    "timber-structures",
+    "mesh-generation",
+    "strength-rating",
+    "vtk",
+    "python",
+]
+
+[metadata.source]
+publisher = "Janusch Töpler, University of Stuttgart; Cuvillier Verlag (thesis)"
+repo = "https://doi.org/10.18419/DARUS-5059"
+pinned_ref = "DaRUS V1.0 (dataset 382543, version 6626, released 2025-05-21); documentation: Toepler 2026 first edition, eISBN 978-3-68952-469-2"
+license = "MIT AND CC-BY-4.0"
+title = "Timber beam-column nonlinear Abaqus model with measured imperfections and worked analysis"
+
+[[metadata.evaluation]]
+model = "gpt-6-luna"
+reasoning_effort = "max"
+passed = 0
+total = 4
+avg_steps = 256.0
+avg_agent_sec = 7147
+
+[[metadata.evaluation]]
+model = "gpt-6.2-sol"
+reasoning_effort = "max"
+passed = 2
+total = 4
+avg_steps = 110.2
+avg_agent_sec = 3838
+
+[[metadata.evaluation]]
+model = "claude-opus-5-5"
+reasoning_effort = "max"
+passed = 3
+total = 4
+avg_steps = 142.2
+avg_agent_sec = 7567
+
+[verifier]
+network_mode = "no-network"
+timeout_sec = 900
+environment_mode = "separate"
+collect = [
+    { command = "mkdir -p /app/out" },
+]
+
+[agent]
+network_mode = "no-network"
+timeout_sec = 12000
+
+[environment]
+build_timeout_sec = 3600
+docker_image = "docker.io/scalableworlds/release-pale-marten@sha256:153dfd83133a8a690b3b98fb66ce633bd0a2b74b533f73d6e47fb01a8a785b45"
+cpus = 2
+memory_mb = 3072
+storage_mb = 10240
+gpus = 0
+workdir = "/app"
+
+[task]
+name = "scalable-worlds/stuttgart-timber-beam-columns-f1589626"
+description = "Release a glulam layup for a three-member beam-column proof series. One batch of finger-jointed stock must fill all three orders. A, B and C have respective targets (f_req, E_req) of (32, 14200),..."
+authors = [
+    { name = "Scalable Worlds", email = "contact@scalableworlds.ai" },
+]
